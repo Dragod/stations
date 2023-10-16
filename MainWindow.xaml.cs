@@ -81,7 +81,6 @@ namespace pfcode_stations
 
             if (stationName.SelectedItem != null)
             {
-                
                 stopButton.Visibility = Visibility.Visible;
 
                 try
@@ -106,7 +105,7 @@ namespace pfcode_stations
 
         private async Task PlayAudioStreamAsync(string mp3Url, int maxRetries = 3, TimeSpan retryDelay = default)
         {
-            int retryCount = 2;
+            int retryCount = 0;
             bool success = false;
 
             while (!success && retryCount < maxRetries)
