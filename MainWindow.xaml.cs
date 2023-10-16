@@ -91,12 +91,10 @@ namespace pfcode_stations
                 }
                 catch (NAudio.MmException ex)
                 {
-                    // Log the exception or display an error message to assist with debugging
                     MessageBox.Show($"NAudio.MmException: {ex.Message}");
                 }
                 catch (Exception ex)
                 {
-                    // Handle other exceptions if needed
                     MessageBox.Show($"Exception: {ex.Message}");
                 }
             }
@@ -138,26 +136,22 @@ namespace pfcode_stations
                 }
                 catch (NAudio.MmException ex)
                 {
-                    // Log the exception or display an error message for debugging purposes
                     MessageBox.Show($"NAudio.MmException: {ex.Message}");
 
                     retryCount++;
                     if (retryCount < maxRetries)
                     {
-                        // Delay before retrying
                         await Task.Delay(retryDelay);
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle other exceptions if needed
                     MessageBox.Show($"Exception: {ex.Message}");
                 }
             }
 
             if (!success)
             {
-                // Handle the failure after reaching the maximum number of retries
                 MessageBox.Show("Failed to play audio stream after multiple retries.");
             }
         }
